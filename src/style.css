@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+@plugin 'daisyui' {
+    themes:
+        light --default,
+        night --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+    name: 'light';
+    default: true;
+    --color-primary: oklch(75.351% 0.138 232.661);
+    --color-primary-content: oklch(15.07% 0.027 232.661);
+    --color-secondary: oklch(68.011% 0.158 276.934);
+    --color-secondary-content: oklch(13.602% 0.031 276.934);
+    --color-accent: oklch(72.36% 0.176 350.048);
+    --color-accent-content: oklch(14.472% 0.035 350.048);
+    --color-neutral: oklch(27.949% 0.036 260.03);
+    --color-neutral-content: oklch(85.589% 0.007 260.03);
+    --color-info: oklch(68.455% 0.148 237.251);
+    --color-info-content: oklch(0% 0 0);
+    --color-success: oklch(78.452% 0.132 181.911);
+    --color-success-content: oklch(15.69% 0.026 181.911);
+    --color-warning: oklch(83.242% 0.139 82.95);
+    --color-warning-content: oklch(16.648% 0.027 82.95);
+    --color-error: oklch(71.785% 0.17 13.118);
+    --color-error-content: oklch(14.357% 0.034 13.118);
+    --color-font: rgba(0, 0, 0, 0.87);
+    --color-background: #f4f8fb;
+}
+
+@plugin "daisyui/theme" {
+    name: 'night';
+    --color-font: rgba(255, 255, 255, 0.87);
+    --color-background: #0b0704;
+}
+
+:root {
+    font-family:
+        Douyin Sans,
+        Helvetica,
+        Arial,
+        Menlo,
+        Monaco,
+        monospace,
+        sans-serif;
+
+    color-scheme: light dark;
+    color: var(--color-font);
+
+    /* 文本渲染优化 */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 渐变动画背景 */
+.linear-bg {
+    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 10s linear infinite;
+    -moz-animation: Gradient 10s linear infinite;
+    animation: Gradient 10s linear infinite;
+}
+@keyframes Gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+}
+
+/* 隐藏垂直滚动条 */
+* ::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    /* 禁止在浏览器上选中文本内容 */
+    -o-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--color-background);
+}
